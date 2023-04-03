@@ -8,9 +8,22 @@
 	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
+
 	<div class="container text-center">
+	<div sec:authorize="isAuthenticated()">
+
+    	<div>
+		<form th:action="@{/logout}" method="post">
+			<p>
+				Welcome <b><span sec:authentication="name"></span></b>
+			</p>
+			<input type="submit" value="Sign Out" />
+		</form>
+	</div>
+	
+	</div>
 		<h1>Konveyor Discussion Forum</h1>
-		<h3><a th:href="@{/getallforumposts}">All posts</a></h3>
+		<h3><a th:href="@{/getallforumposts}">Show All posts</a></h3>
 		<h3><a th:href="@{/addpost}">Add post</a></h3>
 	</div>
 	

@@ -9,7 +9,16 @@
 </head>
 <body>
 <div class="container text-center">
+	<div sec:authorize="isAuthenticated()">
 
+    	<div>
+		<form th:action="@{/logout}" method="post">
+			<p>
+				Welcome <b><span sec:authentication="name"></span></b>
+			</p>
+			<input type="submit" value="Sign Out" />
+		</form>
+	</div>
 	<div>
 		<h1>Post by ID</h1>
 	</div>
@@ -34,7 +43,7 @@
 			</tbody>
 		</table>
 			
-				<h3><a th:href="@{/getallforumposts}">Add a Forum Post</a></h3>
+				<h3><a th:href="@{/getallforumposts}">Get all Forum Post</a></h3>
 			
 				<h3><a th:href="@{/index}">Home</a></h3>
 	</div>

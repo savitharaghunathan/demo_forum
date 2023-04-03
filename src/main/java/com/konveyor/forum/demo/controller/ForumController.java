@@ -56,12 +56,12 @@ public class ForumController {
 		return "addForumPost";
 	}
 	
-	  @GetMapping("/") 
-	  public String showHomePage(Model model) {
-	  model.addAttribute("forum", new Forum());
-	  
-	  return "index"; }
-	  
+	/*
+	 * @GetMapping("/") public String showHomePage(Model model) {
+	 * model.addAttribute("forum", new Forum());
+	 * 
+	 * return "index"; }
+	 */
 	  @GetMapping("/index") 
 	  public String showIndexPage(Model model) {
 	  model.addAttribute("forum", new Forum());

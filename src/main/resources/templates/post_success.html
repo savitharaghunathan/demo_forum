@@ -9,6 +9,16 @@
 </head>
 <body>
 	<div class="container text-center">
+		<div sec:authorize="isAuthenticated()">
+
+    	<div>
+		<form th:action="@{/logout}" method="post">
+			<p>
+				Hi, <b><span sec:authentication="name"></span></b>
+			</p>
+			<input type="submit" value="Sign Out" />
+		</form>
+	</div>
 		<h3>Post added !!</h3>
 		<h4><a th:href="@{/index}">Click here to go back to your home page</a></h4>
 	</div>
