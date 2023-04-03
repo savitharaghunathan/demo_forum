@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>List All Posts</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+
+	<div>
+		<h1>Post by ID</h1>
+	</div>
+	
+	<div>
+		<table class="table table-striped table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th>Name</th>
+					<th>Heading</th>
+					<th>Body</th>
+					<th>Timestamp</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td th:text="${allPosts.name}">Name</td>
+					<td th:text="${allPosts.heading}">Heading</td>
+					<td th:text="${allPosts.body}">Body</td>
+					<td th:text="${allPosts.timestamp}">Timestamp</td>
+				</tr>
+			</tbody>
+		</table>
+			
+				<h3><a th:href="@{/getallforumposts}">Add a Forum Post</a></h3>
+			
+				<h3><a th:href="@{/index}">Home</a></h3>
+	</div>
+</div>
+</body>
+</html>
