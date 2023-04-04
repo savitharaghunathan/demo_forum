@@ -7,8 +7,8 @@ spec:
     app: forum
   ports:
     - protocol: TCP
-      port: 8081
-      targetPort: 8081
+      port: 8080
+      targetPort: 8080
   clusterIP: None
 ---
 apiVersion: apps/v1
@@ -29,4 +29,4 @@ spec: # specification for deployment resource
       - name: forum
         image: docker.io/dymurray/demo
         ports:
-        - containerPort: 8081 #default one
+        - containerPort: 8080 #default one
